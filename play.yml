@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Test that my module works
+      archive:
+        src: ~/archive-ansible-module/test_archive/
+        dest: ~/test.tgz
+        group: sudoers
+      register: result
+ 
+    - debug: var=result
